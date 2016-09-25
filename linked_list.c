@@ -3,13 +3,13 @@
 #include "linked_list.h"
 
 List initial_List(){
-	List list = (List)malloc(sizeof(List));
+	List list = (List)malloc(sizeof(L));
 	list->head = NULL;
 	return list;
 }
 
 Node initial_Node(int key){
-	Node node = (Node)malloc(sizeof(Node));
+	Node node = (Node)malloc(sizeof(element));
 	node->key =  key;
 	node->next = NULL;
 	return node;	
@@ -66,7 +66,7 @@ Node List_delete_element(List list, Node node){
 
 void free_list(List list){
 	Node node;
-	traverse(node, list) free(node);
+	traverse(node, list) if(node!=NULL) free(node);
 }
 
 void free_node(Node node){
